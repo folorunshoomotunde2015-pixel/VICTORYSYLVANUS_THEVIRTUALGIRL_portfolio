@@ -30,7 +30,7 @@ const ContactPage: React.FC = () => {
     .then(() => {
       setIsSubmitted(true);
       setFormData({ name: '', email: '', service: 'Administrative Support', description: '' });
-      setTimeout(() => setIsSubmitted(false), 8000);
+      setTimeout(() => setIsSubmitted(false), 1000);
     })
     .catch((error) => {
       console.error('EmailJS Error:', error);
