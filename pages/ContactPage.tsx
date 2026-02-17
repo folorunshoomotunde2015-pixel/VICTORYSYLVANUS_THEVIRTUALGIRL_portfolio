@@ -33,7 +33,7 @@ const ContactPage: React.FC = () => {
       setIsSubmitted(true);
       setIsLoading(false); // 🔥 Stop loading
       setFormData({ name: '', email: '', service: 'Administrative Support', description: '' });
-      setTimeout(() => setIsSubmitted(false), 2000);
+      setTimeout(() => setIsSubmitted(false), 5000);
     })
     .catch((error) => {
       console.error('EmailJS Error:', error);
@@ -116,12 +116,15 @@ const ContactPage: React.FC = () => {
                   </div>
                   <h3 className="text-4xl font-bold text-white mb-4">Message Sent!</h3>
                   <p className="text-xl text-white/80 mb-10">Thank you, Victory will receive your message instantly and get back to you shortly.</p>
-                  <button 
-                    onClick={() => setIsSubmitted(false)}
-                    className="px-8 py-3 bg-white accent-color rounded-full font-bold uppercase tracking-widest text-sm hover:bg-gray-100 transition-colors"
-                  >
-                    Send Another
-                  </button>
+                  {/*
+<button 
+  onClick={() => setIsSubmitted(false)}
+  className="px-8 py-3 bg-white accent-color rounded-full font-bold uppercase tracking-widest text-sm hover:bg-gray-100 transition-colors"
+>
+  Send Another
+</button>
+*/}
+
                 </div>
               )}
 
