@@ -33,7 +33,7 @@ const ContactPage: React.FC = () => {
       setIsSubmitted(true);
       setIsLoading(false); // 🔥 Stop loading
       setFormData({ name: '', email: '', service: 'Administrative Support', description: '' });
-      setTimeout(() => setIsSubmitted(false), 1000);
+      setTimeout(() => setIsSubmitted(false), 2000);
     })
     .catch((error) => {
       console.error('EmailJS Error:', error);
