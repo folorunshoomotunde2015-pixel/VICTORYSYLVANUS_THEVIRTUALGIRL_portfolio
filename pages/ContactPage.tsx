@@ -1,7 +1,6 @@
-
-
 import React, { useState } from 'react';
 import { Mail, MapPin, Send, CheckCircle2, ChevronRight, Linkedin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -16,13 +15,27 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `New Inquiry: ${formData.service} from ${formData.name}`;
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.service}\n\nDescription:\n${formData.description}`;
-    const mailtoUrl = `mailto:osuaks94@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    setIsSubmitted(true);
-    setFormData({ name: '', email: '', service: 'Administrative Support', description: '' });
-    setTimeout(() => setIsSubmitted(false), 8000);
+
+    emailjs.send(
+      'service_9wbe577',
+      'template_37nyb9w',
+      {
+        name: formData.name,
+        email: formData.email,
+        service: formData.service,
+        message: formData.description,
+      },
+      'pOPaGrXeD6loE_XtE'
+    )
+    .then(() => {
+      setIsSubmitted(true);
+      setFormData({ name: '', email: '', service: 'Administrative Support', description: '' });
+      setTimeout(() => setIsSubmitted(false), 8000);
+    })
+    .catch((error) => {
+      console.error('EmailJS Error:', error);
+      alert('Failed to send message. Please try again.');
+    });
   };
 
   return (
@@ -41,7 +54,7 @@ const ContactPage: React.FC = () => {
           </p>
           <div className="w-20 h-2 accent-bg mx-auto rounded-full opacity-50"></div>
         </div>
-        
+
         {/* Decorative Grid Elements */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] border-y border-white/30 space-y-4 flex flex-col justify-center">
