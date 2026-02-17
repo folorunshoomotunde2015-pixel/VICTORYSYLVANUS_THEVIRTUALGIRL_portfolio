@@ -4,6 +4,7 @@ import emailjs from '@emailjs/browser';
 
 const ContactPage: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -179,11 +180,22 @@ const ContactPage: React.FC = () => {
                 </div>
 
                 <button 
-                  type="submit" 
-                  className="w-full py-6 rounded-2xl text-white font-bold text-xl flex items-center justify-center gap-4 transition-all duration-500 hover:shadow-2xl btn-primary uppercase tracking-[0.2em]"
-                >
-                  <Send size={24} /> Send Message
-                </button>
+  type="submit"
+  disabled={isLoading}
+  className="w-full py-6 rounded-2xl text-white font-bold text-xl flex items-center justify-center gap-4 transition-all duration-500 hover:shadow-2xl btn-primary uppercase tracking-[0.2em] disabled:opacity-70"
+>
+  {isLoading ? (
+    <div className="flex items-center gap-3">
+      <span className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin"></span>
+      Processing...
+    </div>
+  ) : (
+    <div className="flex items-center gap-3">
+      <Send size={24} /> Send Message
+    </div>
+  )}
+</button>
+
               </form>
             </div>
           </div>
