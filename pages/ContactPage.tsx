@@ -16,6 +16,7 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true); // 🔥 Start loading
 
     emailjs.send(
       'service_9wbe577',
@@ -30,11 +31,13 @@ const ContactPage: React.FC = () => {
     )
     .then(() => {
       setIsSubmitted(true);
+      setIsLoading(false); // 🔥 Stop loading
       setFormData({ name: '', email: '', service: 'Administrative Support', description: '' });
       setTimeout(() => setIsSubmitted(false), 1000);
     })
     .catch((error) => {
       console.error('EmailJS Error:', error);
+      setIsLoading(false); // 🔥 Stop loading if error
       alert('Failed to send message. Please try again.');
     });
   };
