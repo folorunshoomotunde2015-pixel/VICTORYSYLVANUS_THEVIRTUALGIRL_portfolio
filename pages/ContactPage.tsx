@@ -74,13 +74,13 @@ const ContactPage: React.FC = () => {
               <h2 className="text-2xl font-black uppercase tracking-[0.2em] mb-8 accent-color">Connections</h2>
               
               <div className="space-y-8">
-                <a href="mailto:osuaks94@gmail.com" className="flex items-start gap-6 group">
+                <a href="mailto:osuakes94@gmail.com" className="flex items-start gap-6 group">
                   <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-purple-50 text-[#6B3F69] group-hover:bg-[#6B3F69] group-hover:text-white transition-all duration-500 shadow-sm shrink-0">
                     <Mail size={32} />
                   </div>
                   <div className="pt-2">
                     <p className="text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-1">Direct Email</p>
-                    <p className="text-xl lg:text-2xl font-bold primary-color break-all">osuaks94@gmail.com</p>
+                    <p className="text-xl lg:text-2xl font-bold primary-color break-all">osuakes94@gmail.com</p>
                   </div>
                 </a>
 
