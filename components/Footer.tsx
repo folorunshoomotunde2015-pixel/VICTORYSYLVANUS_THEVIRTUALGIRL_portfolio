@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
               >
                 <Linkedin size={18} />
               </a>
-              <a href="mailto:osuaks94@gmail.com" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#A376A2] transition-all duration-300">
+              <a href="mailto:osuakes94@gmail.com" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#A376A2] transition-all duration-300">
                 <Mail size={18} />
               </a>
             </div>
