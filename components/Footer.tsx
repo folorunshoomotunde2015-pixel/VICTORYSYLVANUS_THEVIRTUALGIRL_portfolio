@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
           <div className="space-y-6">
             <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">Contact</h4>
             <div className="flex flex-col space-y-4">
-              <a href="mailto:osuaks94@gmail.com" className="text-gray-300 hover:text-white transition-colors flex items-center gap-3 text-sm">
-                <Mail size={16} className="text-[#A376A2]" /> osuaks94@gmail.com
+              <a href="mailto:osuakes94@gmail.com" className="text-gray-300 hover:text-white transition-colors flex items-center gap-3 text-sm">
+                <Mail size={16} className="text-[#A376A2]" /> osuakes94@gmail.com
               </a>
               <span className="text-gray-300 flex items-center gap-3 text-sm">
                 <MapPin size={16} className="text-[#A376A2]" /> Lagos, Nigeria (Remote)
