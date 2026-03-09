@@ -36,7 +36,7 @@ const HomePage: React.FC = () => {
               </h1>
               <div className="min-h-[40px] flex items-center justify-center lg:justify-start">
                 <span className="text-2xl lg:text-4xl font-bold uppercase" style={{ color: '#A376A2' }}>
-                  I'm a <span className="border-r-4 pr-1" style={{ borderColor: '#A376A2' }}>{roleText}</span>
+                  A <span className="border-r-4 pr-1" style={{ borderColor: '#A376A2' }}>{roleText}</span>
                 </span>
               </div>
               <p className="text-lg lg:text-xl text-white/60 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
